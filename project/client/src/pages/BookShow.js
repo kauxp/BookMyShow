@@ -39,14 +39,15 @@ const BookShow = () => {
     let rows = Math.ceil(totalSeats / columns);
 
     return (
-      <div className="d-flex flex-column align-items-center">
+      <div className="d-flex flex-column justify-center align-items-center">
         <div className="w-100 max-width-600 mx-auto mb-25px">
           <p className="text-center mb-10px">
             Screen this side, you will be watching in this direction
           </p>
           <div className="screen-div"></div>
         </div>
-        <ul className="seat-ul justify-content-center">
+        <div className="w-full flex justify-center">
+        <ul className="seat-ul w-100 justify-center items-center">
           {Array.from(Array(rows).keys()).map((row) => {
             return Array.from(Array(columns).keys()).map((column) => {
               let seatNumber = row * columns + column + 1;
@@ -115,6 +116,7 @@ const BookShow = () => {
             Total Price:{" "}
             <span>Rs. {selectedSeats.length * show.ticketPrice}</span>
           </div>
+        </div>
         </div>
       </div>
     );
